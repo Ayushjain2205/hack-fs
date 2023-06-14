@@ -124,7 +124,7 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Thomas Frank Notion Guide ChatBot
+            Notion Guide ChatBot
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -134,25 +134,23 @@ export default function Home() {
                   let className;
                   if (message.type === 'apiMessage') {
                     icon = (
-                      <Image
+                      <img
                         src="/Thomas-Frank-Avatar.jpg"
                         alt="AI"
                         width="40"
                         height="40"
                         className={styles.boticon}
-                        priority
                       />
                     );
                     className = styles.apimessage;
                   } else {
                     icon = (
-                      <Image
+                      <img
                         src="/usericon.png"
                         alt="Me"
                         width="30"
                         height="30"
                         className={styles.usericon}
-                        priority
                       />
                     );
                     // The latest message sent by the user will be animated while waiting for a response
@@ -220,11 +218,7 @@ export default function Home() {
             </div>
           </main>
         </div>
-        <footer className="m-auto">
-          <a href="https://twitter.com/mayowaoshin">
-            Powered by LangChain. Demo built by Mayo (Twitter: @mayowaoshin).
-          </a>
-        </footer>
+        <footer className="m-auto"></footer>
       </Layout>
     </>
   );
