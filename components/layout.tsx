@@ -1,6 +1,7 @@
 interface LayoutProps {
   children?: React.ReactNode;
 }
+import { ConnectWallet } from '@thirdweb-dev/react';
 
 export default function Layout({ children }: LayoutProps) {
   return (
@@ -11,6 +12,7 @@ export default function Layout({ children }: LayoutProps) {
             <a href="#" className="hover:text-slate-600 cursor-pointer">
               Home
             </a>
+            <ConnectWallet />
           </nav>
         </div>
       </header>
