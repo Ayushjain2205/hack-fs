@@ -41,10 +41,10 @@ const Navbar = () => {
               cREATE
             </span>
           </Link>
-          <Link href="/generate">
+          <Link href="/dashboard">
             <span
               className={`text-${
-                active === '/generate' ? 'gray-500 font-bold' : 'base-500'
+                active === '/dashboard' ? 'gray-500 font-bold' : 'base-500'
               }`}
             >
               dASHBOARD
