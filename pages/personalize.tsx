@@ -1,6 +1,7 @@
 import Layout from '@/components/layout';
 import React from 'react';
 import BoxHeader from '@/components/ui/BoxHeader';
+import FileButton from '@/components/form/FileButton';
 
 const Personalize = () => {
   return (
@@ -16,8 +17,11 @@ const Personalize = () => {
               </BoxHeader>
             </div>
           </div>
-          <div className="w-[1141px] h-[320px] border-2 border-black rounded-[4px]">
-            a
+          <div className="w-[1141px] h-[320px] border-2 border-black rounded-[4px] flex flex-col justify-center items-center">
+            <FileButton />
+            <span className="italic text-black text-opacity-50 text-[24px]">
+              (pdf, csv, video link, ppt, xls & more....)
+            </span>
           </div>
         </div>
       </div>
