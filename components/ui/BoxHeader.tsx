@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const BoxHeader = ({ children, title, bg }) => {
+interface BoxHeaderProps {
+  children: ReactNode;
+  title: string;
+  bg?: string;
+}
+
+const BoxHeader = ({ children, title, bg }: BoxHeaderProps) => {
   return (
     <div className="flex flex-col z-1 h-full border-2 border-black rounded-[4px]">
       <div
