@@ -6,7 +6,7 @@ import { Checkbox } from 'antd';
 const Preview = () => {
   return (
     <Layout>
-      <div className="flex flex-col gap-[24px]">
+      <div className="flex flex-col gap-[24px] w-[1152px]">
         <div className="h-[578px] w-[1152px] border-black border-[2px] rounded-[4px] mt-[38px]"></div>
         <div className="flex flex-row gap-[24px]">
           <div className="w-[516px]">
@@ -48,6 +48,15 @@ const Preview = () => {
               a
             </BoxHeader>
           </div>
+        </div>
+        <div className="flex flex-row justify-between">
+          <button className="flex flex-row justify-center  items-center h-[56px] w-[315px] text-white bg-black text-[24px]">
+            <img src="/arrow-left.svg" alt="" />
+            &nbsp;go back to training
+          </button>
+          <button className="h-[56px] w-[315px] text-white bg-black text-[24px]">
+            proceed to checkout
+          </button>
         </div>
       </div>
     </Layout>
