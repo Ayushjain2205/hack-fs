@@ -2,6 +2,7 @@ import Layout from '@/components/layout';
 import React from 'react';
 import BoxHeader from '@/components/ui/BoxHeader';
 import FileButton from '@/components/form/FileButton';
+import FileTile from '@/components/misc/FileTile';
 
 const Personalize = () => {
   return (
@@ -10,10 +11,18 @@ const Personalize = () => {
         <h5 className="font-bold text-[36px] my-[20px]">LeT’S personalise</h5>
         <div className="flex flex-col gap-[24px]">
           <div className="flex flex-row gap-[24px] w-[1141px]">
-            <div className="h-[472px] w-[346px] flex-shrink-0 bg-[#FFC022]"></div>
+            <div className="h-[472px] w-[346px] flex-shrink-0 bg-[#FFC022]">
+              <img src="/pharma.svg" alt="" />
+            </div>
             <div className="w-full">
               <BoxHeader title="Knowledge base" bg="#fff">
-                <p className="text-[16px]"> Personalize your experience</p>
+                <div className="grid grid-cols-3 gap-[16px] gap-x-[24px]">
+                  <FileTile />
+                  <FileTile />
+                  <FileTile />
+                  <FileTile />
+                  <FileTile />
+                </div>
               </BoxHeader>
             </div>
           </div>

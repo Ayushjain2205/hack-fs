@@ -16,7 +16,7 @@ const BoxHeader = ({ children, title, bg }: BoxHeaderProps) => {
       >
         <span className=" text-[32px]">{title}</span>
       </div>
-      <div className="flex flex-col p-10">{children}</div>
+      <div className="flex flex-col p-[24px]">{children}</div>
     </div>
   );
 };
