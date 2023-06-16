@@ -37,7 +37,7 @@ const FileTile: React.FC<FileTileProps> = ({ id, name, onRemove }) => {
       {/* Put this part before </body> tag */}
       <input type="checkbox" id={`doc_modal_${id}`} className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box">
+        <div className="modal-box border-2 border-black rounded-[4px]">
           <DocViewer
             documents={docs}
             initialActiveDocument={docs[0]}
