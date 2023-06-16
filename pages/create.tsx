@@ -2,11 +2,12 @@ import React from 'react';
 import Layout from '@/components/layout';
 import BoxHeader from '@/components/ui/BoxHeader';
 import FileButton from '@/components/form/FileButton';
+import Link from 'next/link';
 
 const Create = () => {
   return (
     <Layout>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-[32px]">
         <h5 className="font-bold text-[36px] my-[20px]">LeT’S create</h5>
         <div className="flex flex-row gap-[24px]">
           <div className="flex flex-col gap-[24px]">
@@ -34,6 +35,18 @@ const Create = () => {
               </div>
             </BoxHeader>
           </div>
+        </div>
+        <div className="flex flex-row w-full justify-center mx-auto">
+          <Link href="/preview">
+            <button className="flex flex-row justify-center  items-center h-[56px] w-[230px] text-white bg-black text-[24px]">
+              LeTs preview &nbsp;
+              <img
+                src="/arrow-left.svg"
+                className="transform rotate-[135deg]"
+                alt=""
+              />
+            </button>
+          </Link>
         </div>
       </div>
     </Layout>
