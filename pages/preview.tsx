@@ -3,6 +3,8 @@ import React from 'react';
 import BoxHeader from '@/components/ui/BoxHeader';
 import Link from 'next/link';
 import Chat from '@/components/chat';
+import { CopyBlock, dracula } from 'react-code-blocks';
+import { apiCode } from '@/config/apiCode';
 
 const Preview = () => {
   return (
@@ -46,7 +48,15 @@ const Preview = () => {
           </div>
           <div className="w-[612px]">
             <BoxHeader title="bOT API" bg="#fff">
-              a
+              <div className="max-h-[214px] overflow-scroll">
+                <CopyBlock
+                  text={apiCode}
+                  language="js"
+                  showLineNumbers={true}
+                  theme={dracula}
+                  codeBlock
+                />
+              </div>
             </BoxHeader>
           </div>
         </div>
