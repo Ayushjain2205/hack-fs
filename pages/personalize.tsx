@@ -1,11 +1,22 @@
+import React, { useState } from 'react';
 import Layout from '@/components/layout';
-import React from 'react';
 import BoxHeader from '@/components/ui/BoxHeader';
 import FileButton from '@/components/form/FileButton';
 import FileTile from '@/components/misc/FileTile';
 import Link from 'next/link';
 
-const Personalize = () => {
+const Personalize: React.FC = () => {
+  const [fileTiles, setFileTiles] = useState<{ id: number; name: string }[]>([
+    { id: 1, name: 'Designing for Behavior Change_ Applying.pdf' },
+    { id: 2, name: 'Designing for Behavior Change_ Applying.pdf' },
+    { id: 3, name: 'Designing for Behavior Change_ Applying.pdf' },
+    { id: 4, name: 'Designing for Behavior Change_ Applying.pdf' },
+  ]);
+
+  const removeFileTile = (id: number) => {
+    setFileTiles((prevTiles) => prevTiles.filter((tile) => tile.id !== id));
+  };
+
   return (
     <Layout>
       <div className="flex flex-col gap-[32px]">
@@ -18,11 +29,14 @@ const Personalize = () => {
             <div className="w-full">
               <BoxHeader title="Knowledge base" bg="#fff">
                 <div className="grid grid-cols-3 gap-[16px] gap-x-[24px]">
-                  <FileTile />
-                  <FileTile />
-                  <FileTile />
-                  <FileTile />
-                  <FileTile />
+                  {fileTiles.map((fileTile) => (
+                    <FileTile
+                      key={fileTile.id}
+                      id={fileTile.id}
+                      name={fileTile.name}
+                      onRemove={removeFileTile}
+                    />
+                  ))}
                 </div>
               </BoxHeader>
             </div>
