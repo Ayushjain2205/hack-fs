@@ -1,11 +1,11 @@
 import Layout from '@/components/layout';
 import React from 'react';
-import Chat from '@/components/chat';
+import ChatBot from '@/components/chatbox';
 
 const Chatpage = () => {
   return (
     <Layout>
-      <Chat />
+      <ChatBot />
     </Layout>
   );
 };

@@ -1,17 +1,16 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import Layout from '@/components/layout';
 import styles from '@/styles/Home.module.css';
 import { Message } from '@/types/chat';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
-import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import LoadingDots from '@/components/ui/LoadingDots';
 
 interface ChatProps {
   width?: number;
+  height?: number;
 }
 
-export default function Chat({ width }: ChatProps) {
+export default function ChatBot({ width, height }: ChatProps) {
   const [query, setQuery] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [messageState, setMessageState] = useState<{
@@ -124,8 +123,12 @@ export default function Chat({ width }: ChatProps) {
   }, [messages, pending]);
 
   return (
-    <main className={`${styles.main} mt-[38px] `}>
-      <div className={styles.cloud}>
+    <div
+      className={`w-[1152px] ${
+        height ? `h-[${height}px]` : 'h-[800px]'
+      } border-2 border-black rounded-[4px] flex flex-col`}
+    >
+      <div className="flex-grow overflow-y-scroll">
         <div ref={messageListRef} className={styles.messagelist}>
           {chatMessages.map((message, index) => {
             let icon;
@@ -170,7 +173,7 @@ export default function Chat({ width }: ChatProps) {
           })}
         </div>
       </div>
-      <div className={styles.center}>
+      <div className="w-[1084px] flex flex-col gap-[10px] flex-end self-center mb-[30px] mt-[20px] ">
         <div className={styles.cloudform}>
           <form onSubmit={handleSubmit}>
             <textarea
@@ -213,7 +216,27 @@ export default function Chat({ width }: ChatProps) {
             </button>
           </form>
         </div>
+        <div className="flex flex-row gap-[14px]">
+          <span
+            className="text-[24px] italic bg-[#F4F2F2] h-[32px] px-[10px] rounded-[2px] cursor-pointer"
+            onClick={() => {
+              const value = 'recommend supplements for low Vitamin D';
+              setQuery(value);
+            }}
+          >
+            recommend supplements for low Vitamin D
+          </span>
+          <span
+            className="text-[24px] italic bg-[#F4F2F2] h-[32px] px-[10px] rounded-[2px] cursor-pointer"
+            onClick={() => {
+              const value = 'what medicine to take to not have a hangover?';
+              setQuery(value);
+            }}
+          >
+            what medicine to take to not have a hangover?
+          </span>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

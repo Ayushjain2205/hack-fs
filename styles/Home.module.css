@@ -22,7 +22,7 @@
   resize: none;
   font-size: 1.1rem;
   padding: 1rem 2rem 1rem 2rem;
-  width: 1152px;
+  width: 1084px;
   border-radius: 0.5rem;
   border: 2px solid #000;
   background: #ffffff;
@@ -189,7 +189,7 @@
 .cloud {
   width: 1152px;
   height: 578px;
-  background: #ffffff;
+  background: #f4f2f2;
   border-radius: 0.5rem;
   border: 2px solid #000;
   display: flex;

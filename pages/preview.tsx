@@ -2,7 +2,7 @@ import Layout from '@/components/layout';
 import React from 'react';
 import BoxHeader from '@/components/ui/BoxHeader';
 import Link from 'next/link';
-import Chat from '@/components/chat';
+import ChatBot from '@/components/chatbox';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import { apiCode } from '@/config/apiCode';
 
@@ -10,7 +10,7 @@ const Preview = () => {
   return (
     <Layout>
       <div className="flex flex-col gap-[24px] w-[1152px]">
-        <Chat />
+        <ChatBot height={578} />
         <div className="flex flex-row gap-[24px]">
           <div className="w-[516px]">
             <BoxHeader title="How should it be used?" bg="#fff">
