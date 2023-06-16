@@ -1,19 +1,16 @@
 import '@/styles/base.css';
 import type { AppProps } from 'next/app';
-import { Inter } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import { ThirdwebProvider } from '@thirdweb-dev/react';
 import { FilecoinCalibrationTestnet } from '@thirdweb-dev/chains';
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-});
+const DM = DM_Sans({ weight: ['500', '400', '700'], subsets: ['latin'] });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThirdwebProvider activeChain={FilecoinCalibrationTestnet}>
-        <main className={inter.variable}>
+        <main className={DM.className}>
           <Component {...pageProps} />
         </main>
       </ThirdwebProvider>
