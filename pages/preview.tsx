@@ -1,13 +1,14 @@
 import Layout from '@/components/layout';
 import React from 'react';
 import BoxHeader from '@/components/ui/BoxHeader';
-import { Checkbox } from 'antd';
+import Link from 'next/link';
+import Chat from '@/components/chat';
 
 const Preview = () => {
   return (
     <Layout>
       <div className="flex flex-col gap-[24px] w-[1152px]">
-        <div className="h-[578px] w-[1152px] border-black border-[2px] rounded-[4px] mt-[38px]"></div>
+        <Chat />
         <div className="flex flex-row gap-[24px]">
           <div className="w-[516px]">
             <BoxHeader title="How should it be used?" bg="#fff">
@@ -50,10 +51,12 @@ const Preview = () => {
           </div>
         </div>
         <div className="flex flex-row justify-between">
-          <button className="flex flex-row justify-center  items-center h-[56px] w-[315px] text-white bg-black text-[24px]">
-            <img src="/arrow-left.svg" alt="" />
-            &nbsp;go back to training
-          </button>
+          <Link href="personalize">
+            <button className="flex flex-row justify-center  items-center h-[56px] w-[315px] text-white bg-black text-[24px]">
+              <img src="/arrow-left.svg" alt="" />
+              &nbsp;go back to training
+            </button>
+          </Link>
           <button className="h-[56px] w-[315px] text-white bg-black text-[24px]">
             proceed to checkout
           </button>
