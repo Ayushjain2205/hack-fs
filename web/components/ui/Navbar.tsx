@@ -73,10 +73,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-center">
         <div className="flex flex-row gap-[48px] text-[20px]">
-          <Link href="/explore">
+          <Link href="/">
             <span
               className={`text-${
-                active === '/explore' ? 'gray-500 font-bold' : 'base-500'
+                active === '/' ? 'gray-500 font-bold' : 'base-500'
               }`}
             >
               eXPLORE
