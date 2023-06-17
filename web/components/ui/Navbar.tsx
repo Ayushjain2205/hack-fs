@@ -103,15 +103,6 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-        {!address ? (
-          <></>
-        ) : (
-          <img
-            src="/address.svg"
-            className="rounded-full border-black border-[1px] mx-[10px]"
-            alt=""
-          />
-        )}
         <div className="flex flex-row justify-center items-center gap-[10px]">
           <Popover.Root>
             <Popover.Trigger asChild>
