@@ -1,6 +1,9 @@
 import Layout from '@/components/layout';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ChatBot from '@/components/chatbox';
+import { ethers } from 'ethers';
+import { abi } from '../config/abi';
+import { useAddress } from '@thirdweb-dev/react';
 
 declare global {
   interface Window {
@@ -9,11 +12,45 @@ declare global {
 }
 
 const Chatpage = () => {
+  const [contract, setContract] = useState<ethers.Contract | null>(null);
+
+  const address = useAddress();
+
+  const contractAddress = '0x0603dCfcAF81Df618915EcA57F4fa2c2ee50FDE3';
+
+  const contractABI = abi;
+
   useEffect(() => {
     if (!window.buy_modal.open) {
       window.buy_modal.showModal();
     }
+
+    const provider = new ethers.providers.Web3Provider(
+      window.ethereum as ethers.providers.ExternalProvider,
+    );
+
+    const signer = provider.getSigner();
+
+    const contractInstance = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      signer,
+    );
+
+    setContract(contractInstance);
   }, []);
+
+  async function mintTokens() {
+    if (!contract) {
+      console.error('Contract is not loaded');
+      return;
+    }
+
+    let to = address || '0xCafa93E9985793E2475bD58B9215c21Dbd421fD0';
+    const amount = ethers.utils.parseUnits('50', 18); // The amount of b-coins to be minted
+
+    await contract.mint(to, amount);
+  }
 
   return (
     <Layout>
@@ -74,7 +111,10 @@ const Chatpage = () => {
                 <div className="text-[20px]">Use as widget in mobile</div>
               </div>
             </div>
-            <div className="mt-[24px] flex flex-row justify-center items-center h-[64px] w-[338px] text-white bg-black text-[24px]">
+            <div
+              onClick={mintTokens}
+              className="mt-[24px] flex flex-row justify-center items-center h-[64px] w-[338px] text-white bg-black text-[24px] cursor-pointer"
+            >
               BUY!
             </div>
           </div>
