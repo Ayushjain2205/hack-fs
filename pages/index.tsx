@@ -1,14 +1,49 @@
+import Navbar from '@/components/ui/Navbar';
 import React from 'react';
-import Layout from '@/components/layout';
 
-const Landing = () => {
+const HexagonalGrid = () => {
   return (
-    <Layout>
-      <div>
-        <div className="h-[300px] w-[300px] bg-[#FFC022] rounded-full border-black border-[2px]"></div>
+    <div className="mx-auto flex flex-col space-y-4">
+      <Navbar />
+      <div className="main">
+        <div className="container">
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+          </div>
+        </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 
-export default Landing;
+export default HexagonalGrid;
