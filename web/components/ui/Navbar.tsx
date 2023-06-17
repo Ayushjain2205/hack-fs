@@ -11,6 +11,7 @@ import { abi } from '../../config/abi';
 const Navbar = () => {
   const [contract, setContract] = useState<ethers.Contract | null>(null);
   const [inputValue, setInputValue] = useState(100);
+  const [tokenBalance, setTokenBalance] = useState<string | null>(null); // new state variable to hold token balance
 
   const address = useAddress();
 
@@ -32,6 +33,16 @@ const Navbar = () => {
     );
 
     setContract(contractInstance);
+
+    async function getTokenBalance() {
+      let balance = await contractInstance.balanceOf(address);
+      let decimals = await contractInstance.decimals();
+      let adjustedBalance = ethers.utils.formatUnits(balance, decimals);
+      setTokenBalance(adjustedBalance);
+    }
+
+    getTokenBalance();
+    console.log(tokenBalance);
   }, []);
 
   async function mintTokens() {
@@ -105,7 +116,14 @@ const Navbar = () => {
           <Popover.Root>
             <Popover.Trigger asChild>
               <button className="flex flex-row justify-center items-center h-[48px] w-[151px] text-white bg-black text-[16px]">
-                Buy coins
+                {active === '/' ? (
+                  'Buy coins'
+                ) : (
+                  <>
+                    <img src="/bcoin.svg" alt="" /> &nbsp; &nbsp;
+                    {Math.floor(Number(tokenBalance))}
+                  </>
+                )}
               </button>
             </Popover.Trigger>
             <Popover.Portal>
