@@ -4,7 +4,7 @@
 
 .main {
   --s: 310px; /* size of a hexagon */
-  --m: 30px; /* space between each heaxgon */
+  --m: 20px; /* space between each heaxgon */
   --r: calc(var(--s) * 3 * 1.1547 / 2 + 4 * var(--m));
   display: flex;
   margin-top: 0 !important;
