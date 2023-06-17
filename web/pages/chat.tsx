@@ -34,7 +34,7 @@ const Chatpage = () => {
               <a>download extension</a>
             </li>
             <li>
-              <a>didget for mobil</a>
+              <a>widget for mobile</a>
             </li>
           </ul>
         </div>
