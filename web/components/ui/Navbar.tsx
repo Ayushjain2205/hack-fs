@@ -42,7 +42,6 @@ const Navbar = () => {
     }
 
     getTokenBalance();
-    console.log(tokenBalance);
   }, []);
 
   async function mintTokens() {

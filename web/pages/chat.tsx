@@ -1,6 +1,9 @@
 import Layout from '@/components/layout';
 import React, { useEffect, useState } from 'react';
 import ChatBot from '@/components/chatbox';
+import { useAddress } from '@thirdweb-dev/react';
+import { ethers } from 'ethers';
+import { abi } from '../config/abi';
 
 declare global {
   interface Window {
@@ -9,11 +12,58 @@ declare global {
 }
 
 const Chatpage = () => {
+  const [contract, setContract] = useState<ethers.Contract | null>(null);
+  const [inputValue, setInputValue] = useState(50);
+  const [tokenBalance, setTokenBalance] = useState<string | null>(null); // new state variable to hold token balance
+
+  const address = useAddress();
+
+  const contractAddress = '0x0603dCfcAF81Df618915EcA57F4fa2c2ee50FDE3';
+
+  const contractABI = abi;
+
   useEffect(() => {
     if (!window.buy_modal.open) {
       window.buy_modal.showModal();
     }
+    const provider = new ethers.providers.Web3Provider(
+      window.ethereum as ethers.providers.ExternalProvider,
+    );
+
+    const signer = provider.getSigner();
+
+    const contractInstance = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      signer,
+    );
+
+    setContract(contractInstance);
+
+    async function getTokenBalance() {
+      let balance = await contractInstance.balanceOf(address);
+      let decimals = await contractInstance.decimals();
+      let adjustedBalance = ethers.utils.formatUnits(balance, decimals);
+      setTokenBalance(adjustedBalance);
+    }
+
+    getTokenBalance();
   }, []);
+
+  async function mintTokens() {
+    if (!contract) {
+      console.error('Contract is not loaded');
+      return;
+    }
+
+    let from = address || '0xCafa93E9985793E2475bD58B9215c21Dbd421fD0';
+    const amount = ethers.utils.parseUnits(inputValue.toString(), 18); // The amount of b-coins to be minted
+    const sendAddress = '0x37fcE72a7397E5FDdEe880F9AAafC26d0F751782';
+
+    await contract.transferFrom(from, sendAddress, amount, {
+      gasLimit: 57825000,
+    });
+  }
 
   return (
     <Layout>
@@ -74,7 +124,10 @@ const Chatpage = () => {
                 <div className="text-[20px]">Use as widget in mobile</div>
               </div>
             </div>
-            <div className="mt-[24px] flex flex-row justify-center items-center h-[64px] w-[338px] text-white bg-black text-[24px] cursor-pointer">
+            <div
+              onClick={mintTokens}
+              className="mt-[24px] flex flex-row justify-center items-center h-[64px] w-[338px] text-white bg-black text-[24px] cursor-pointer"
+            >
               BUY!
             </div>
           </div>
