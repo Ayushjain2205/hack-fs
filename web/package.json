@@ -37,7 +37,8 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.5",
     "recharts": "^2.7.1",
-    "tailwind-merge": "^1.10.0"
+    "tailwind-merge": "^1.10.0",
+    "web3.storage": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
