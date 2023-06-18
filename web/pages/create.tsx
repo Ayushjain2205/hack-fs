@@ -15,7 +15,7 @@ const Create = () => {
               <input
                 type="text"
                 placeholder="enter name here"
-                className="input input-ghost w-[237px] max-w-xs focus:border-transparent focus:outline-none"
+                className="input input-ghost w-[267px] max-w-xs focus:border-transparent focus:outline-none text-[28px]"
               />
             </div>
             <div className="h-[323px] w-[346px] border-2 border-black rounded-[4px] flex flex-col justify-center items-center gap-[24px] ">
