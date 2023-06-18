@@ -20,7 +20,8 @@ export default function ChatBot({ width, height }: ChatProps) {
   }>({
     messages: [
       {
-        message: 'Hi there its Tom! What would like to learn about notion?',
+        message:
+          'Hi there its the Health man! What would like to know about health and wellness?',
         type: 'apiMessage',
       },
     ],
@@ -188,7 +189,7 @@ export default function ChatBot({ width, height }: ChatProps) {
               placeholder={
                 loading
                   ? 'Waiting for response...'
-                  : 'How does notion api work?'
+                  : 'How does bad sleep cycle affect the body?'
               }
               value={query}
               onChange={(e) => setQuery(e.target.value)}

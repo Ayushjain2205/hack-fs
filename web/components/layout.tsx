@@ -8,10 +8,8 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="mx-auto flex flex-col space-y-4">
       <Navbar />
-      <div className="container mx-auto pb-[50px]">
-        <main className="flex w-full flex-1 flex-col overflow-hidden">
-          {children}
-        </main>
+      <div className="flex flex-row items-center mx-auto pb-[50px]">
+        <main className="mx-auto flex-col overflow-scroll">{children}</main>
       </div>
     </div>
   );

@@ -67,8 +67,8 @@ const Chatpage = () => {
 
   return (
     <Layout>
-      <div className="flex flex-row w-[1152px] justify-between mb-[36px] mt-[25px]">
-        <h5 className="font-bold text-[36px]">The PHARMA man</h5>
+      <div className="flex flex-row w-[1152px] justify-between items-center mb-[36px] mt-[25px]">
+        <h5 className="font-bold text-[36px]">all HEALTH MAN</h5>
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="cursor-pointer">
             <img src="/more-vertical.svg" alt="" />
