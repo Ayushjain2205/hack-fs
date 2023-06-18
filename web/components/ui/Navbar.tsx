@@ -105,7 +105,7 @@ const Navbar = () => {
         <div className="flex flex-row justify-center items-center gap-[10px]">
           <Popover.Root>
             <Popover.Trigger asChild>
-              <button className="flex flex-row justify-center items-center h-[48px] w-[151px] text-white bg-black text-[16px]">
+              <button className="flex flex-row justify-center items-center h-[48px] w-[151px] text-white bg-black text-[16px] rounded-[2px]">
                 {active === '/' ? (
                   'Buy coins'
                 ) : (
@@ -152,7 +152,7 @@ const Navbar = () => {
               </Popover.Content>
             </Popover.Portal>
           </Popover.Root>
-          <ConnectWallet theme="light" />
+          <ConnectWallet className="connect-btn" theme="light" />
         </div>
       </div>
     </div>
