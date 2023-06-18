@@ -26,55 +26,43 @@ const HexagonalGrid = () => {
             className="flex flex-row items-center justify-center cursor-pointer"
             onClick={() => window.use_modal.showModal()}
           >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+            <img className="m-auto mt-[25px]" src="/landing2.svg" alt="" />
           </div>
           <div
             className="flex flex-row items-center justify-center cursor-pointer"
             onClick={() => window.use_modal.showModal()}
           >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+            <img className="m-auto mt-[25px]" src="/landing3.svg" alt="" />
           </div>
           <div
             className="flex flex-row items-center justify-center cursor-pointer"
             onClick={() => window.use_modal.showModal()}
           >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+            <img className="m-auto mt-[25px]" src="/landing4.svg" alt="" />
           </div>
           <div
             className="flex flex-row items-center justify-center cursor-pointer"
             onClick={() => window.use_modal.showModal()}
           >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+            <img className="m-auto mt-[25px]" src="/landing5.svg" alt="" />
           </div>
           <div
             className="flex flex-row items-center justify-center cursor-pointer"
             onClick={() => window.use_modal.showModal()}
           >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+            <img className="m-auto mt-[25px]" src="/landing6.svg" alt="" />
           </div>
           <div
             className="flex flex-row items-center justify-center cursor-pointer"
             onClick={() => window.use_modal.showModal()}
           >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+            <img className="m-auto mt-[25px]" src="/landing7.svg" alt="" />
           </div>
           <div
             className="flex flex-row items-center justify-center cursor-pointer"
             onClick={() => window.use_modal.showModal()}
           >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
-          </div>
-          <div
-            className="flex flex-row items-center justify-center cursor-pointer"
-            onClick={() => window.use_modal.showModal()}
-          >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
-          </div>
-          <div
-            className="flex flex-row items-center justify-center cursor-pointer"
-            onClick={() => window.use_modal.showModal()}
-          >
-            <img className="m-auto mt-[25px]" src="/landing1.svg" alt="" />
+            <img className="m-auto mt-[25px]" src="/landing8.svg" alt="" />
           </div>
         </div>
       </div>
