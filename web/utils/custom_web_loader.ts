@@ -3,6 +3,7 @@ import { Document } from 'langchain/document';
 import { BaseDocumentLoader } from 'langchain/document_loaders';
 import type { DocumentLoader } from 'langchain/document_loaders';
 import { CheerioWebBaseLoader } from 'langchain/document_loaders';
+import { textbase } from '@/config/text';
 
 export class CustomWebLoader
   extends BaseDocumentLoader
@@ -41,7 +42,7 @@ export class CustomWebLoader
 
     const metadata = { source: this.webPath, title, date, contentLength };
 
-    return [new Document({ pageContent: cleanedContent, metadata })];
+    return [new Document({ pageContent: textbase })];
   }
 
   static async imports(): Promise<{

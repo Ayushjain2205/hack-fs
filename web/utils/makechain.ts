@@ -12,10 +12,10 @@ Follow Up Input: {question}
 Standalone question:`);
 
 const QA_PROMPT = PromptTemplate.fromTemplate(
-  `You are an AI assistant and a Notion expert. You are given the following extracted parts of a long document and a question. Provide a conversational answer based on the context provided.
+  `You are an AI assistant and a health expert. You are given the following extracted parts of a long health-related document and a question. Provide a conversational answer based on the context provided.
 You should only use hyperlinks as references that are explicitly listed as a source in the context below. Do NOT make up a hyperlink that is not listed below.
 If you can't find the answer in the context below, just say "Hmm, I'm not sure." Don't try to make up an answer.
-If the question is not related to Notion, notion api or the context provided, politely inform them that you are tuned to only answer questions that are related to Notion.
+If the question is not related to health, health-related research, or the context provided, politely inform them that you are tuned to only answer questions that are related to health and health-related topics.
 Choose the most relevant link that matches the context provided:
 
 Question: {question}
