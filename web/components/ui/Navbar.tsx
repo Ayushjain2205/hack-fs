@@ -67,7 +67,7 @@ const Navbar = () => {
     <div className="navbar bg-base-100 h-[88px] padding-auto px-[40px] border-b-2 border-[#373F41]">
       <div className="navbar-start">
         <Link href="/">
-          <img src="/mascot.svg" className="h-[37px] w-[36px]" alt="" />
+          <img src="/logo.svg" className="h-[49px] w-[168px]" alt="" />
         </Link>
       </div>
       <div className="navbar-center">
