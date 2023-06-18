@@ -73,7 +73,7 @@ const HexagonalGrid = () => {
         >
           <div className="absolute w-full">
             <div className="h-[613px] flex flex-col align-center justify-center">
-              <img className="h-[300px]" src="/mascot.svg" alt="" />
+              <img className="w-[729] h-[566px] " src="/cover.svg" alt="" />
             </div>
             <div className=" w-full left-0 right-0 border-t-2 border-black flex flex-row items-center h-[96px] gap-[24px] justify-end px-[24px]">
               <Link href="/personalize">

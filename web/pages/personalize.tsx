@@ -7,9 +7,9 @@ import Link from 'next/link';
 
 const Personalize: React.FC = () => {
   const [fileTiles, setFileTiles] = useState<{ id: number; name: string }[]>([
-    { id: 1, name: 'Designing for Behavior Change_ Applying.pdf' },
-    { id: 2, name: 'Designing for Behavior Change_ Applying.pdf' },
-    { id: 3, name: 'Designing for Behavior Change_ Applying.pdf' },
+    { id: 1, name: 'Staying_Healthy.pdf' },
+    { id: 2, name: 'Health_at_home.pdf' },
+    { id: 3, name: 'Healthy Living Guide 2020/2021 .pdf' },
     { id: 4, name: 'Designing for Behavior Change_ Applying.pdf' },
   ]);
 
