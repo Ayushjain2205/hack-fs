@@ -20,28 +20,33 @@ const Navbar = () => {
   const contractABI = abi;
 
   useEffect(() => {
-    const provider = new ethers.providers.Web3Provider(
-      window.ethereum as ethers.providers.ExternalProvider,
-    );
+    if (typeof window !== 'undefined' && window.ethereum) {
+      const provider = new ethers.providers.Web3Provider(
+        window.ethereum as ethers.providers.ExternalProvider,
+      );
 
-    const signer = provider.getSigner();
+      const signer = provider.getSigner();
 
-    const contractInstance = new ethers.Contract(
-      contractAddress,
-      contractABI,
-      signer,
-    );
+      const contractInstance = new ethers.Contract(
+        contractAddress,
+        contractABI,
+        signer,
+      );
 
-    setContract(contractInstance);
+      setContract(contractInstance);
 
-    async function getTokenBalance() {
-      let balance = await contractInstance.balanceOf(address);
-      let decimals = await contractInstance.decimals();
-      let adjustedBalance = ethers.utils.formatUnits(balance, decimals);
-      setTokenBalance(adjustedBalance);
+      async function getTokenBalance() {
+        let balance = await contractInstance.balanceOf(address);
+        let decimals = await contractInstance.decimals();
+        let adjustedBalance = ethers.utils.formatUnits(balance, decimals);
+        setTokenBalance(adjustedBalance);
+      }
+
+      getTokenBalance();
+    } else {
+      console.log('Please install MetaMask or another Ethereum wallet');
+      // handle the error, e.g. show a message to the user
     }
-
-    getTokenBalance();
   }, []);
 
   async function mintTokens() {
