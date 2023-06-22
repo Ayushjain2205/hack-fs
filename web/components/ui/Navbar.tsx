@@ -36,10 +36,14 @@ const Navbar = () => {
       setContract(contractInstance);
 
       async function getTokenBalance() {
-        let balance = await contractInstance.balanceOf(address);
-        let decimals = await contractInstance.decimals();
-        let adjustedBalance = ethers.utils.formatUnits(balance, decimals);
-        setTokenBalance(adjustedBalance);
+        if (address) {
+          let balance = await contractInstance.balanceOf(address);
+          let decimals = await contractInstance.decimals();
+          let adjustedBalance = ethers.utils.formatUnits(balance, decimals);
+          setTokenBalance(adjustedBalance);
+        } else {
+          console.log('The address is not defined');
+        }
       }
 
       getTokenBalance();
@@ -47,7 +51,7 @@ const Navbar = () => {
       console.log('Please install MetaMask or another Ethereum wallet');
       // handle the error, e.g. show a message to the user
     }
-  }, []);
+  }, [address]);
 
   async function mintTokens() {
     if (!contract) {
