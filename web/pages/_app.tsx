@@ -1,11 +1,14 @@
 import '@/styles/base.css';
 import type { AppProps } from 'next/app';
 import { DM_Sans } from 'next/font/google';
-import { ThirdwebProvider } from '@thirdweb-dev/react';
+import {
+  ThirdwebProvider,
+  localWallet,
+  metamaskWallet,
+} from '@thirdweb-dev/react';
 import {
   FilecoinCalibrationTestnet,
   HederaTestnet,
-  Hedera,
 } from '@thirdweb-dev/chains';
 
 const DM = DM_Sans({ weight: ['500', '400', '700'], subsets: ['latin'] });
@@ -13,7 +16,10 @@ const DM = DM_Sans({ weight: ['500', '400', '700'], subsets: ['latin'] });
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThirdwebProvider activeChain={HederaTestnet}>
+      <ThirdwebProvider
+        activeChain={HederaTestnet}
+        supportedWallets={[localWallet(), metamaskWallet()]}
+      >
         <main className={DM.className}>
           <Component {...pageProps} />
         </main>
