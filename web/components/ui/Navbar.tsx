@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const address = useAddress();
 
-  const contractAddress = '0x0603dCfcAF81Df618915EcA57F4fa2c2ee50FDE3';
+  const contractAddress = '0x581f62c0901d4dce2553cb6140dBb4CeE533d834';
 
   const contractABI = abi;
 
