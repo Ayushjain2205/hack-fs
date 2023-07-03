@@ -7,6 +7,7 @@ import * as Popover from '@radix-ui/react-popover';
 import { InputNumber } from 'antd';
 import { ethers } from 'ethers';
 import { abi } from '../../config/abi';
+import { fetchCovalentData } from '../../helpers/covalentHelper.js';
 
 const Navbar = () => {
   const [contract, setContract] = useState<ethers.Contract | null>(null);
@@ -47,6 +48,7 @@ const Navbar = () => {
       }
 
       getTokenBalance();
+      fetchCovalentData();
     } else {
       console.log('Please install MetaMask or another Ethereum wallet');
       // handle the error, e.g. show a message to the user
