@@ -6,10 +6,7 @@ import {
   localWallet,
   metamaskWallet,
 } from '@thirdweb-dev/react';
-import {
-  FilecoinCalibrationTestnet,
-  HederaTestnet,
-} from '@thirdweb-dev/chains';
+import { Fantom, HederaTestnet } from '@thirdweb-dev/chains';
 
 const DM = DM_Sans({ weight: ['500', '400', '700'], subsets: ['latin'] });
 
