@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThirdwebProvider
-        activeChain={HederaTestnet}
+        activeChain={Fantom}
         supportedWallets={[localWallet(), metamaskWallet()]}
       >
         <main className={DM.className}>
